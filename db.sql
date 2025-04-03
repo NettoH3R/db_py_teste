@@ -1,4 +1,4 @@
-CREATE exercicios
+CREATE DATABASE exercicios;
 
 USE exercicios;
 
