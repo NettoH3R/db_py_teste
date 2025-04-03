@@ -1,0 +1,10 @@
+tasks:
+  - name: Instalar e Configurar MySQL
+    init: |
+      sudo apt-get update
+      sudo apt-get install -y mysql-server
+      sudo service mysql start
+      # Configuração opcional (senha root, criar banco, etc.)
+      sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'senha'; FLUSH PRIVILEGES;"
+
+
