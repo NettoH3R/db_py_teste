@@ -10,15 +10,17 @@ def cnn_db():
     password='',
     port = '3306',
     database="exercicios"
-)
+    )
+    return conexao
 
 def inserir_pessoa(nome, idade):
 
     cursor = None
     novo_id = None
+    conexao = None
 
     try: 
-        cnn_db()
+        conexao = cnn_db()
         
         cursor = conexao.cursor()
 
@@ -42,4 +44,28 @@ def inserir_pessoa(nome, idade):
         if conexao and conexao.is_connected():
             conexao.close()
 
+
     return novo_id
+
+def consultar_pessoas():
+    cursor = None
+    conexao = None
+
+
+    try: 
+        conexao = cnn_db()
+
+        cursor = conexao.cursor(dictionary = True)
+
+        cursor.execute("SELECT id, nome, idade FROM pessoas")
+        pessoas = cursor.fetchall()
+
+        for pessoa  in pessoas:
+            print(f"ID : {pessoa['id']} | NOME : {pessoa['nome']} | IDADE : {pessoa['idade']}\n")
+        print("\n\n")
+
+        
+
+    except Error as e:
+        print(f"❌ Erro ao listar: {e}")
+

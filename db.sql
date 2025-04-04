@@ -8,3 +8,4 @@ CREATE TABLE pessoas(
     nome VARCHAR(255) NOT NULL,
     idade INT NOT NULL
 );
+

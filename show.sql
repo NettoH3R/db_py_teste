@@ -1,0 +1,3 @@
+USE exercicios;
+
+SHOW TABLES;

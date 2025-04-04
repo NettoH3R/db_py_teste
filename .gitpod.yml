@@ -5,7 +5,8 @@ tasks:
       sudo apt-get install -y mysql-server
       sudo service mysql start
       # Configuração opcional (senha root, criar banco, etc.)
-      sudo mysql -e "SOURCE /workspace/db_py_teste/sql.db"
+      sudo mysql -e "SOURCE /workspace/db_py_teste/db.sql"
       sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY ''; FLUSH PRIVILEGES;"
+      pip install mysql-connector-python
 
 
