@@ -32,7 +32,7 @@ def inserir_pessoa(nome, idade):
 
         novo_id = cursor.lastrowid
 
-        print(f"✅ Pessoa '{nome}' inserida com ID: {novo_id}")
+        print(f"✅ Pessoa '{nome}' inserida com ID: {novo_id}\n")
 
     except Error as e:
         print(f"❌ Erro ao inserir pessoa: {e}")
